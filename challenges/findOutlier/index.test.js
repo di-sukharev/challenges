@@ -1,6 +1,6 @@
 import { findOutlierSlow, findOutlierFast } from "./index";
 
-describe("Finds outlier integer in an array slow", () => {
+describe("Finds outlier integer in an array", () => {
   test("Does it slow", () => {
     expect(findOutlierSlow([0, 1, 2])).toBe(1);
     expect(findOutlierSlow([1, 2, 3])).toBe(2);

@@ -7,7 +7,7 @@
  * GetSum(1, 3) == 6  // 1 + 2 + 3  = 6
  */
 
-function getSum(a, b) {
+export default function getSum(a, b) {
   if (a === b) return a;
 
   const ordered = a < b ? [a, b] : [b, a];

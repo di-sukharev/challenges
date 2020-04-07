@@ -1,8 +1,14 @@
 import getMiddle from "./index";
 
-test("Gets middle characters from a string", () => {
-  expect(getMiddle("test")).toBe("es");
-  expect(getMiddle("testing")).toBe("t");
-  expect(getMiddle("middle")).toBe("dd");
-  expect(getMiddle("A")).toBe("A");
+describe("Gets middle characters from a string", () => {
+  test("In odd length string", () => {
+    expect(getMiddle("testing")).toBe("t");
+  });
+  test("In even length string", () => {
+    expect(getMiddle("test")).toBe("es");
+    expect(getMiddle("middle")).toBe("dd");
+  });
+  test("In single length string", () => {
+    expect(getMiddle("A")).toBe("A");
+  });
 });

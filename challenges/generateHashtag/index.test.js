@@ -1,11 +1,11 @@
 import generateHashtag from ".";
 
 describe("Should generate #Hashtag from string: Hello World ==> #HelloWorld", () => {
-  test("Doesn't accept empty strings", () => {
+  test("Should not accept empty strings", () => {
     expect(generateHashtag("")).toBe(false);
   });
 
-  test("Doesn't accept long empty strings", () => {
+  test("Should not accept long empty strings", () => {
     expect(generateHashtag(" ".repeat(200))).toBe(false);
   });
 

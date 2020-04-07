@@ -21,3 +21,5 @@ const spinWords = sentence =>
         : word
     )
     .join(" ");
+
+export default spinWords;
