@@ -7,7 +7,7 @@
  * pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
  * pigIt('Hello world !');     // elloHay orldway !
  */
-function pigIt(str) {
+export default function pigIt(str) {
   return str
     .split(" ")
     .map(word => (word.match(/\w/) ? `${word.slice(1) + word[0]}ay` : word))

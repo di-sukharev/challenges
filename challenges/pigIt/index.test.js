@@ -1,2 +1,6 @@
-Test.assertEquals(pigIt("Pig latin is cool"), "igPay atinlay siay oolcay");
-Test.assertEquals(pigIt("This is my string"), "hisTay siay ymay tringsay");
+import pigIt from "./index";
+
+test("Translate string into a pig latin", () => {
+  expect(pigIt("Pig latin is cool")).toBe("igPay atinlay siay oolcay");
+  expect(pigIt("This is my string")).toBe("hisTay siay ymay tringsay");
+});
