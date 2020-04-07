@@ -1,7 +1,7 @@
-describe("Split Strings", () => {
-  it("Basic tests", () => {
-    assert.deepEqual(solution("abcdef"), ["ab", "cd", "ef"]);
-    assert.deepEqual(solution("abcdefg"), ["ab", "cd", "ef", "g_"]);
-    assert.deepEqual(solution(""), []);
-  });
+import twoPairs from "./index";
+
+test("Splits the string into pairs of two characters", () => {
+  expect(twoPairs("abcdef")).toEqual(["ab", "cd", "ef"]);
+  expect(twoPairs("abcdefg")).toEqual(["ab", "cd", "ef", "g_"]);
+  expect(twoPairs("")).toEqual([]);
 });

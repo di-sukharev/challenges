@@ -7,7 +7,7 @@
  * [10, 3, 19, 1000, -44] should return 13.
  */
 
-function sumTwoSmallestNumbers(numbers) {
+export default function sumTwoSmallestNumbers(numbers) {
   const [a, b] = numbers.sort((c, d) => c - d);
   return a + b;
 }

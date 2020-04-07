@@ -8,3 +8,5 @@
  */
 
 const binaryArrayToNumber = arr => arr.reverse().reduce((cur, next, i) => cur + next * 2 ** i);
+
+export default binaryArrayToNumber;

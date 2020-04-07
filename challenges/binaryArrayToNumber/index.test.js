@@ -1,8 +1,8 @@
-describe("One's and Zero's", () => {
-  it("Example tests", () => {
-    Test.assertEquals(binaryArrayToNumber([0, 0, 0, 1]), 1);
-    Test.assertEquals(binaryArrayToNumber([0, 0, 1, 0]), 2);
-    Test.assertEquals(binaryArrayToNumber([1, 1, 1, 1]), 15);
-    Test.assertEquals(binaryArrayToNumber([0, 1, 1, 0]), 6);
-  });
+import binaryArrayToNumber from "./index";
+
+test("One's and Zero's", () => {
+  expect(binaryArrayToNumber([0, 0, 0, 1])).toBe(1);
+  expect(binaryArrayToNumber([0, 0, 1, 0])).toBe(2);
+  expect(binaryArrayToNumber([1, 1, 1, 1])).toBe(15);
+  expect(binaryArrayToNumber([0, 1, 1, 0])).toBe(6);
 });

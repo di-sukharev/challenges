@@ -15,14 +15,14 @@
 const isEven = num => !(num % 2);
 const isOdd = num => num % 2;
 
-function findOutlierSlow(integers) {
+export function findOutlierSlow(integers) {
   const evens = integers.filter(isEven);
   const odds = integers.filter(isOdd);
 
   return evens.length < odds.length ? evens[0] : odds[0];
 }
 
-function findOutlierFast(integers) {
+export function findOutlierFast(integers) {
   let evenORodd = null;
   let result = null;
 

@@ -5,7 +5,7 @@
  * with an underscore ('_').
  */
 
-function solution(str) {
+export default function twoPairs(str) {
   return str
     .split("")
     .map((s, i, arr) => (i % 2 === 0 ? s + (arr[i + 1] || "_") : s))
