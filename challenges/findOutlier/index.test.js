@@ -8,6 +8,7 @@ test("Finds outlier integer in an array slow", () => {
   expect(findOutlierSlow([9, 8, 6, 10, 12])).toBe(9);
   expect(findOutlierSlow([0, 0, 3, 0, 0])).toBe(3);
   expect(findOutlierSlow([1, 1, 0, 1, 1])).toBe(0);
+  expect(findOutlierSlow([1, 1, 1, 0, 0, 1, 1])).toBe(0);
 });
 
 test("Finds outlier integer in an array fast", () => {
