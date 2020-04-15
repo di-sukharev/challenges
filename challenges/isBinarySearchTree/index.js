@@ -20,13 +20,9 @@ export class Node {
 }
 
 const isOrdered = arr => {
-  const isOrderedAscending = arr.every((item, i, a) =>
-    i === a.length - 1 ? true : item < a[i + 1]
-  );
-  const isOrderedDescending = arr.every((item, i, a) =>
-    i === a.length - 1 ? true : item > a[i + 1]
-  );
-  return isOrderedAscending || isOrderedDescending;
+  const isOrderedAsc = arr.every((item, i, a) => (i === a.length - 1 ? true : item < a[i + 1]));
+  const isOrderedDesc = arr.every((item, i, a) => (i === a.length - 1 ? true : item > a[i + 1]));
+  return isOrderedAsc || isOrderedDesc;
 };
 
 const isBST = root => {
