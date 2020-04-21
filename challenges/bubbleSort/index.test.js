@@ -13,4 +13,7 @@ describe("Bubble sort", () => {
   test("Should work with empty arrays", () => {
     expect(bubbleSort([])).toEqual([]);
   });
+  test("Should work with sorted arrays", () => {
+    expect(bubbleSort([1, 2, 3, 4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+  });
 });
