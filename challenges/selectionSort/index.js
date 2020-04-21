@@ -7,9 +7,11 @@ const selectionSort = arr => {
       if (sortedArray[j] < sortedArray[min]) min = j;
     }
     // start of swap
-    const save = sortedArray[i];
-    sortedArray[i] = sortedArray[min];
-    sortedArray[min] = save;
+    if (min !== i) {
+      const save = sortedArray[i];
+      sortedArray[i] = sortedArray[min];
+      sortedArray[min] = save;
+    }
     // end of swap
   }
 
