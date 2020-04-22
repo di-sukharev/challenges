@@ -9,20 +9,18 @@
  */
 
 const insertionSort = arr => {
-  const sortedArray = arr;
+  const sorted = arr;
 
-  for (let i = 1; i < sortedArray.length; i++) {
-    const extracted = sortedArray[i];
+  for (let i = 1; i < sorted.length; i++) {
+    const save = sorted[i];
     // eslint-disable-next-line for-direction
-    for (let j = i; j > 0; j--) {
-      if (sortedArray[j - 1] > extracted) {
-        sortedArray[j] = sortedArray[j - 1];
-        sortedArray[j - 1] = extracted;
-      } else break;
+    for (let j = i; j > 0 && sorted[j - 1] > save; j--) {
+      sorted[j] = sorted[j - 1];
+      sorted[j - 1] = save;
     }
   }
 
-  return sortedArray;
+  return sorted;
 };
 
 export default insertionSort;
