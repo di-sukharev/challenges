@@ -1,4 +1,4 @@
-import { Node, preOrder, inOrder, postOrder } from "./index";
+import { Node, preOrder, inOrder, postOrder, levelOrder } from "./index";
 
 const N = (v, l, r) => new Node(v, l, r);
 
@@ -20,5 +20,11 @@ describe("Tree traversals DFS (depth first search)", () => {
     expect(postOrder(N(7, N(2), N(9)))).toEqual([2, 9, 7]);
     expect(postOrder(N(1, N(2), N(3)))).toEqual([2, 3, 1]);
     expect(postOrder(N(5, N(2, null, N(7)), N(9)))).toEqual([7, 2, 9, 5]);
+  });
+  test("levelOrder traversal", () => {
+    expect(levelOrder(N(5, N(2, N(1), N(3)), N(7, null, N(9))))).toEqual([5, 2, 7, 1, 3, 9]);
+    expect(levelOrder(N(7, N(2), N(9)))).toEqual([7, 2, 9]);
+    expect(levelOrder(N(1, N(2), N(3)))).toEqual([1, 2, 3]);
+    expect(levelOrder(N(5, N(2, null, N(7)), N(9)))).toEqual([5, 2, 9, 7]);
   });
 });

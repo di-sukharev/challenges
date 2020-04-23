@@ -63,3 +63,22 @@ export function postOrder(root) {
 
   return result;
 }
+
+// 1.) Start from the root node, 2.) visit nodes of left tree in current depth, 3.) visit nodes of right tree in current depth, 4.) step one level down
+export function levelOrder(root) {
+  const result = [];
+
+  if (root) result.push(root.value);
+
+  function traversal(node) {
+    const { left, right } = node;
+    if (left) result.push(left.value);
+    if (right) result.push(right.value);
+    if (left) traversal(left);
+    if (right) traversal(right);
+  }
+
+  traversal(root);
+
+  return result;
+}
