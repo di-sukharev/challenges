@@ -31,17 +31,17 @@ const isBST = root => {
   if (!root) return false;
   if (root.value && !root.left && !root.right) return true;
 
-  const helper = node => {
+  const inorderTraversal = node => {
     const { value, left, right } = node;
 
-    if (left !== null) helper(left);
+    if (left !== null) inorderTraversal(left);
 
     res.push(value);
 
-    if (right !== null) helper(right);
+    if (right !== null) inorderTraversal(right);
   };
 
-  helper(root);
+  inorderTraversal(root);
 
   return isOrdered(res);
 };
