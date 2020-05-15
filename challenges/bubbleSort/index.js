@@ -8,26 +8,31 @@
  * @returns {*} arr (sorted array)
  */
 
-const bubbleSort = arr => {
-  const sortedArr = arr;
+function bubbleSort(arr) {
+  const sorted = arr;
+
   let swapped;
-  let indexOfLastUnsortedElement = sortedArr.length - 1;
+  let lastUnsortedIndex = sorted.length - 1;
+  // repeat loop while elements continue to swap
   do {
     swapped = false;
 
-    for (let i = 0; i < indexOfLastUnsortedElement; i++) {
-      if (sortedArr[i] > sortedArr[i + 1]) {
-        const save = sortedArr[i];
-        sortedArr[i] = sortedArr[i + 1];
-        sortedArr[i + 1] = save;
+    // go through all unsorted elements and swap adjacents if left > right
+    for (let i = 0; i < lastUnsortedIndex; i++) {
+      if (sorted[i] > sorted[i + 1]) {
+        // start swap
+        const save = sorted[i];
+        sorted[i] = sorted[i + 1];
+        sorted[i + 1] = save;
         swapped = true;
+        // end swap
       }
     }
 
-    indexOfLastUnsortedElement--;
+    lastUnsortedIndex--;
   } while (swapped);
 
-  return sortedArr;
-};
+  return sorted;
+}
 
 export default bubbleSort;
