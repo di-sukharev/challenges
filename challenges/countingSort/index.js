@@ -8,8 +8,11 @@ const countingSort = (arr, min, max) => {
 
   const sortedIntegers = [];
 
-  for (let i = 0; i < counts.length; i++) while (counts[i]-- > 0) sortedIntegers.push(i + offset);
-
+  for (let i = 0; i < counts.length; i++) {
+    while (counts[i]-- > 0) {
+      sortedIntegers.push(i + offset);
+    }
+  }
   return sortedIntegers;
 };
 
