@@ -8,19 +8,31 @@
  * @returns {*} arr (sorted array)
  */
 
-const insertionSort = arr => {
-  const sorted = arr;
+function insertionSort(arr) {
+  if (arr.length === 0) return arr;
 
-  for (let i = 1; i < sorted.length; i++) {
-    const save = sorted[i];
-    // eslint-disable-next-line for-direction
-    for (let j = i; j > 0 && sorted[j - 1] > save; j--) {
-      sorted[j] = sorted[j - 1];
-      sorted[j - 1] = save;
+  // take first element
+  const sorted = [arr[0]];
+
+  while (sorted.length < arr.length) {
+    // take next element
+    const next = arr[sorted.length];
+
+    // if previous elements are higher -> move them right
+    for (let i = sorted.length; i > 0; i--) {
+      if (next < sorted[i - 1]) {
+        // start swap
+        sorted[i] = sorted[i - 1];
+        sorted[i - 1] = next;
+        // end swap
+      } else {
+        sorted[i] = next;
+        break;
+      }
     }
   }
 
   return sorted;
-};
+}
 
 export default insertionSort;
