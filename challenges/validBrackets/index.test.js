@@ -2,6 +2,8 @@ import isValid from "./index.js";
 
 describe("Century from year", () => {
   test("Should return century from any year", () => {
+    expect(isValid("(A((X))A)")).toBeTruthy(); // true
+    expect(isValid("hello")).toBeTruthy(); // true
     expect(isValid("{{{")).toBeFalsy(); // false
     expect(isValid("{{}{}}")).toBeTruthy(); // true
     expect(isValid("{([])}")).toBeTruthy(); // true

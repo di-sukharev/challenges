@@ -23,4 +23,31 @@ function isValid(str) {
   return matches.length === 0;
 }
 
+// function isValid(str) {
+//   let left = 0;
+//   let right = str.length - 1;
+
+//   let leftBracket;
+//   let rightBracket;
+
+//   while (left < right) {
+//     if (str[left] !== "(") left++;
+//     else leftBracket = str[left];
+
+//     if (str[right] !== ")") right--;
+//     else rightBracket = str[right];
+
+//     if (leftBracket && rightBracket) {
+//       leftBracket = null;
+//       rightBracket = null;
+//       left++;
+//       right--;
+//     }
+//   }
+
+//   if (!leftBracket && !rightBracket) return true;
+
+//   return false;
+// }
+
 export default isValid;
