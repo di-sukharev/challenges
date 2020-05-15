@@ -1,21 +1,27 @@
-const selectionSort = arr => {
-  const sortedArray = arr;
+function selectionSort(arr) {
+  const sorted = arr;
 
-  for (let i = 0; i < sortedArray.length; i++) {
-    let min = i;
-    for (let j = min + 1; j < sortedArray.length; j++) {
-      if (sortedArray[j] < sortedArray[min]) min = j;
+  let firstUnsortedIndex = 0;
+
+  // while elements are unsorted
+  while (firstUnsortedIndex < sorted.length - 1) {
+    let minValueIndex = firstUnsortedIndex;
+
+    // find the minimum value of all unsorted elements
+    for (let i = firstUnsortedIndex + 1; i < sorted.length; i++) {
+      if (sorted[i] < sorted[minValueIndex]) minValueIndex = i;
     }
-    // start of swap
-    if (min !== i) {
-      const save = sortedArray[i];
-      sortedArray[i] = sortedArray[min];
-      sortedArray[min] = save;
-    }
-    // end of swap
+
+    // start swap of first unsorted element with the minimum value
+    const save = sorted[minValueIndex];
+    sorted[minValueIndex] = sorted[firstUnsortedIndex];
+    sorted[firstUnsortedIndex] = save;
+    // end swap
+
+    firstUnsortedIndex++;
   }
 
-  return sortedArray;
-};
+  return sorted;
+}
 
 export default selectionSort;
