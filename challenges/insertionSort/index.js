@@ -26,6 +26,7 @@ function insertionSort(arr) {
         sorted[i - 1] = next;
         // end swap
       } else {
+        // save next to current index
         sorted[i] = next;
         break;
       }
