@@ -1,34 +1,30 @@
-const mergeSort = arr => {
+function mergeSort(arr) {
+  // base-case (stop recursion)
   if (arr.length <= 1) return arr;
 
   const mid = Math.floor(arr.length / 2);
-
   const left = arr.slice(0, mid);
   const right = arr.slice(mid);
 
   return merge(mergeSort(left), mergeSort(right));
-};
+}
 
-// Merge the two arrays: left and right
 function merge(left, right) {
-  const resultArray = [];
-  let leftIndex = 0;
-  let rightIndex = 0;
+  let i = 0; // left array pointer
+  let j = 0; // right array pointer
+  const sorted = [];
 
-  // We will concatenate values into the resultArray in order
-  while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-      resultArray.push(left[leftIndex]);
-      leftIndex++; // move left array cursor
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      sorted.push(left[i]);
+      i++; // move left array pointer
     } else {
-      resultArray.push(right[rightIndex]);
-      rightIndex++; // move right array cursor
+      sorted.push(right[j]);
+      j++; // move right array pointer
     }
   }
 
-  // We need to concat here because there will be one element remaining
-  // from either left OR the right
-  return [...resultArray, ...left.slice(leftIndex), ...right.slice(rightIndex)];
+  return [...sorted, ...left.slice(i), ...right.slice(j)];
 }
 
 export default mergeSort;
