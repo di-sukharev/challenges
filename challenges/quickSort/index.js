@@ -1,46 +1,26 @@
-const quickSort = (unsortedArray, left = 0, right = unsortedArray.length - 1) => {
-  const sortedArray = unsortedArray;
+function quickSort(arr) {
+  // base-case (stop recursion)
+  if (arr.length <= 1) return arr;
 
-  let index;
-  if (sortedArray.length > 1) {
-    index = partition(sortedArray, left, right);
-    // is there any elements left?
-    if (left < index - 1) {
-      quickSort(sortedArray, left, index - 1);
-    }
-    // is there any elements right?
-    if (index < right) {
-      quickSort(sortedArray, index, right);
-    }
-  }
-  return sortedArray;
-};
+  const { left, pivot, right } = partition(arr);
 
-function partition(items, left, right) {
-  const pivot = items[Math.floor((left + right) / 2)];
-  let i = left;
-  let j = right;
-
-  while (i <= j) {
-    while (items[i] < pivot) {
-      i++;
-    }
-    while (items[j] > pivot) {
-      j--;
-    }
-    if (i <= j) {
-      swap(items, i, j);
-      i++;
-      j--;
-    }
-  }
-  return i;
+  return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-function swap(items, leftIndex, rightIndex) {
-  const temp = items[leftIndex];
-  items[leftIndex] = items[rightIndex];
-  items[rightIndex] = temp;
+function partition(arr) {
+  const sorted = arr;
+  const mid = Math.floor(sorted.length / 2);
+  const [pivot] = sorted.splice(mid, 1);
+
+  const left = [];
+  const right = [];
+
+  sorted.forEach(el => {
+    if (el <= pivot) left.push(el);
+    if (el > pivot) right.push(el);
+  });
+
+  return { left, pivot, right };
 }
 
 export default quickSort;
