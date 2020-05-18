@@ -1,19 +1,25 @@
-const countingSort = (arr, min, max) => {
-  if (!arr.length) return arr;
+function countingSort(arr, min, max) {
+  if (arr.length <= 1) return arr;
 
-  const counts = new Array(max - min + 1).fill(0);
-  const offset = min;
+  // create 0-indexed array from min to max
+  const keys = new Array(max - min + 1).fill(0);
 
-  arr.forEach(int => counts[int - offset]++);
+  // save count of integers occurances
+  arr.forEach(el => {
+    const offset = el - min;
+    if (keys[offset]) keys[offset] += 1;
+    else keys[offset] = 1;
+  });
 
-  const sortedIntegers = [];
+  const sorted = [];
 
-  for (let i = 0; i < counts.length; i++) {
-    while (counts[i]-- > 0) {
-      sortedIntegers.push(i + offset);
-    }
+  // print each index
+  for (let i = 0; i < keys.length; i++) {
+    const offset = i + min;
+    while (keys[i]-- > 0) sorted.push(offset);
   }
-  return sortedIntegers;
-};
+
+  return sorted;
+}
 
 export default countingSort;
