@@ -31,8 +31,6 @@ function selectionSort(arr) {
     sorted[minIndex] = temp;
   }
 
-  console.log({ arr, sorted });
-
   return sorted;
 }
 
