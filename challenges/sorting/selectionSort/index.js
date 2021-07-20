@@ -1,3 +1,11 @@
+/**
+ * Selection sort algorithm implementation.
+ * O(N^2) time complexity & O(1) memory complexity.
+ *
+ * @param {*} arr
+ * @returns {*} arr (sorted array)
+ */
+
 function selectionSort(arr) {
   const sorted = arr;
 

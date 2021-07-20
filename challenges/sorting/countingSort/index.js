@@ -1,3 +1,11 @@
+/**
+ * Counting sort algorithm implementation.
+ * O(N+K) time complexity & O(N+K) memory complexity.
+ *
+ * @param {*} arr
+ * @returns {*} arr (sorted array)
+ */
+
 function countingSort(arr, min, max) {
   if (arr.length <= 1) return arr;
 
@@ -5,7 +13,7 @@ function countingSort(arr, min, max) {
   const keys = new Array(max - min + 1).fill(0);
 
   // save count of integers occurances
-  arr.forEach(el => {
+  arr.forEach((el) => {
     const offset = el - min;
     if (keys[offset]) keys[offset] += 1;
     else keys[offset] = 1;

@@ -1,3 +1,12 @@
+/**
+ * Merge sort algorithm implementation.
+ * O(N*log(N)) — time complexity.
+ * O(N) memory complexity
+ *
+ * @param {*} arr
+ * @returns {*} arr (sorted array)
+ */
+
 function mergeSort(arr) {
   // base-case (stop recursion)
   if (arr.length <= 1) return arr;

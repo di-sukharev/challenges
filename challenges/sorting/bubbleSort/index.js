@@ -2,7 +2,9 @@
 
 /**
  * Bubble sort algorithm implementation.
- * O(N^2) time complexity & O(1) memory complexity.
+ * O(N) best case.
+ * O(N^2) average and worst case.
+ * O(1) memory complexity.
  *
  * @param {*} arr
  * @returns {*} arr (sorted array)

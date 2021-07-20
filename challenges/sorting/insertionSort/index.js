@@ -1,8 +1,11 @@
 /* eslint-disable no-param-reassign */
 
 /**
- * Bubble sort algorithm implementation.
- * O(N^2) time complexity & O(1) memory complexity.
+ * Insertion sort algorithm implementation.
+ * O(N) — best case.
+ * O(N^2) — average case.
+ * O(N^2) — worst case.
+ * O(1) memory complexity.
  *
  * @param {*} arr
  * @returns {*} arr (sorted array)

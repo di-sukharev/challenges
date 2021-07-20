@@ -1,3 +1,13 @@
+/**
+ * Quick sort algorithm implementation.
+ * O(N*log(N)) — best and average time complexity.
+ * O(N^2) — worst time complexity.
+ * O(N) memory complexity
+ *
+ * @param {*} arr
+ * @returns {*} arr (sorted array)
+ */
+
 function quickSort(arr) {
   // base-case (stop recursion)
   if (arr.length <= 1) return arr;
@@ -15,7 +25,7 @@ function partition(arr) {
   const left = [];
   const right = [];
 
-  sorted.forEach(el => {
+  sorted.forEach((el) => {
     if (el <= pivot) left.push(el);
     if (el > pivot) right.push(el);
   });
