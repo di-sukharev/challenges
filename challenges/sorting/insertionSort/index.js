@@ -7,31 +7,31 @@
  * O(N^2) — worst case.
  * O(1) memory complexity.
  *
+ * Pseudo-code:
+ *  mark first element as sorted
+ *   for each unsorted element X
+ *     'extract' the element X
+ *     for j = lastSortedIndex down to 0
+ *       if current element j > X
+ *         move sorted element to the right by 1
+ *       break loop and insert X here
+ *
  * @param {*} arr
  * @returns {*} arr (sorted array)
  */
 
 function insertionSort(arr) {
-  if (arr.length === 0) return arr;
+  const sorted = [...arr];
 
-  // take first element
-  const sorted = [arr[0]];
+  if (sorted.length === 0) return sorted;
 
-  while (sorted.length < arr.length) {
-    // take next element
-    const next = arr[sorted.length];
+  for (let i = 1; i < sorted.length; i++) {
+    const extracted = sorted[i];
 
-    // if previous elements are higher -> move them right
-    for (let i = sorted.length; i > 0; i--) {
-      if (next < sorted[i - 1]) {
-        // start swap
-        sorted[i] = sorted[i - 1];
-        sorted[i - 1] = next;
-        // end swap
-      } else {
-        // save next to current index
-        sorted[i] = next;
-        break;
+    for (let j = i - 1; j >= 0; j--) {
+      if (extracted < sorted[j]) {
+        sorted[j + 1] = sorted[j];
+        sorted[j] = extracted;
       }
     }
   }
