@@ -20,30 +20,26 @@
  */
 
 function bubbleSort(arr) {
-  const sorted = arr;
+  const sortedArr = arr;
 
-  let swapped;
-  let lastUnsortedIndex = sorted.length - 1;
-  // repeat loop while elements continue to swap
+  let swapped = true;
+  let lastUnsortedIndex = sortedArr.length;
   do {
     swapped = false;
 
-    // go through all unsorted elements and swap adjacents if left > right
     for (let i = 0; i < lastUnsortedIndex; i++) {
-      if (sorted[i] > sorted[i + 1]) {
-        // start swap
-        const save = sorted[i];
-        sorted[i] = sorted[i + 1];
-        sorted[i + 1] = save;
+      if (sortedArr[i] > sortedArr[i + 1]) {
+        const temp = sortedArr[i];
+        sortedArr[i] = sortedArr[i + 1];
+        sortedArr[i + 1] = temp;
         swapped = true;
-        // end swap
       }
     }
 
     lastUnsortedIndex--;
   } while (swapped);
 
-  return sorted;
+  return sortedArr;
 }
 
 export default bubbleSort;
