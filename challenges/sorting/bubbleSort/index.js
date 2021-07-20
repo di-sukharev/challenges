@@ -20,7 +20,7 @@
  */
 
 function bubbleSort(arr) {
-  const sortedArr = arr;
+  const sortedArr = [...arr];
 
   let swapped = true;
   let lastUnsortedIndex = sortedArr.length;
