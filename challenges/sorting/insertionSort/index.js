@@ -23,7 +23,7 @@
 function insertionSort(arr) {
   const sorted = [...arr];
 
-  if (sorted.length === 0) return sorted;
+  if (sorted.length <= 1) return sorted;
 
   for (let i = 1; i < sorted.length; i++) {
     const extracted = sorted[i];

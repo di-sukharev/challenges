@@ -15,23 +15,25 @@
  */
 
 function selectionSort(arr) {
-  const sorted = [...arr];
+  const sortedArr = [...arr];
 
-  for (let i = 0; i < sorted.length; i++) {
+  if (sortedArr.length <= 1) return sortedArr;
+
+  for (let i = 0; i < sortedArr.length; i++) {
     let minIndex = i;
 
-    for (let j = i + 1; j < sorted.length; j++) {
-      if (sorted[j] < sorted[minIndex]) {
+    for (let j = i + 1; j < sortedArr.length; j++) {
+      if (sortedArr[j] < sortedArr[minIndex]) {
         minIndex = j;
       }
     }
 
-    const temp = sorted[i];
-    sorted[i] = sorted[minIndex];
-    sorted[minIndex] = temp;
+    const temp = sortedArr[i];
+    sortedArr[i] = sortedArr[minIndex];
+    sortedArr[minIndex] = temp;
   }
 
-  return sorted;
+  return sortedArr;
 }
 
 export default selectionSort;

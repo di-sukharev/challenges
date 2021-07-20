@@ -22,6 +22,8 @@
 function bubbleSort(arr) {
   const sortedArr = [...arr];
 
+  if (sortedArr.length <= 1) return sortedArr;
+
   let swapped = true;
   let lastUnsortedIndex = sortedArr.length;
   do {
