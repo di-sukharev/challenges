@@ -1,7 +1,16 @@
 /**
  * Merge sort algorithm implementation.
  * O(N*log(N)) — time complexity.
- * O(N) memory complexity
+ * O(N) memory complexity.
+ *
+ * Pseudo-code:
+ *  split each element into partitions of size 1
+ *   recursively merge adjacent partitions
+ *     for i = leftPartIdx to rightPartIdx
+ *       if leftPartHeadValue <= rightPartHeadValue
+ *         copy leftPartHeadValue
+ *       else: copy rightPartHeadValue
+ *   copy elements back to original array
  *
  * @param {*} arr
  * @returns {*} arr (sorted array)
