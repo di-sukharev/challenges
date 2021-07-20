@@ -6,6 +6,15 @@
  * O(N^2) average and worst case.
  * O(1) memory complexity.
  *
+ * Pseudo-code:
+ *  do
+ *    swapped = false
+ *    for i = 1 to indexOfLastUnsortedElement-1
+ *       if leftElement > rightElement
+ *         swap(leftElement, rightElement)
+ *         swapped = true
+ *  while swapped
+ *
  * @param {*} arr
  * @returns {*} arr (sorted array)
  */
